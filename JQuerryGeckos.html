@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-git.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Final task for HW I guess</title>
+    <style>
+      .scroll {
+          height: 1000px;
+        
+      }
+  </style>
+  <style type="text/css">
+    textarea {
+      display:block;
+      margin:1em 0;
+    }  
+    </style>  
+
+    </head>
+    <body>
+      <h1 style="color: green">
+        Geckos again, because why not?
+    </h1>
+      <h3> Let's see some geckos) </h3>
+      <p>
+        Click on the button below to 
+        scroll to the top of the page.
+    </p>
+      <p class="scroll">
+        
+    </p>
+    <p>Click the button to toggle between password visibility:</p>
+    Password: <input type="password" value="GeckosAreCool" id="myInput"><br><br>
+    <input type="checkbox" onclick="myFunction()">Show Password
+
+    <script>
+          function myFunction() {
+          var x = document.getElementById("myInput");
+          if (x.type === "password") { x.type = "text"; } 
+          else { x.type = "password"; }
+          }
+    </script>
+    <br>
+    <br>
+    <input id="accept" name="accept" type="checkbox" value="y"/>I accept<br>  
+    <input id="submitbtn" disabled="disabled" name="Submit" type="submit" value="Submit" />
+
+    <br> <br>
+
+    <form>
+      <label>Maximum 15 characters</label>
+      <textarea id="textarea" maxlength="15"></textarea>
+        <span id="rchars">15</span> Character(s) Remaining
+      </form>
+      <script>
+          var maxLength = 15;
+          $('textarea').keyup(function() {
+          var textlen = maxLength - $(this).val().length;
+          $('#rchars').text(textlen);
+          });
+      </script>
+    <br><br>
+    <h3>Not animated geckos. </h3>
+    <h3>Animated geckos.</h3>
+    <script> 
+          $( "h3:last" ).click(function() {
+          $( this ).fadeTo( "slow", 0.70 ); }); 
+    </script>
+    <br><br>
+
+    <button id="btn1">Animate height & width(Find a gecko)</button>
+    <button id="btn2">Reset</button>
+    <div id="box" style="background-image: url('https://i.ebayimg.com/images/g/QRUAAOSwLKxfyMKu/s-l400.jpg');height:100px;width:100px;margin:6px;"></div>
+    <script>   
+          $( "#btn1" ).click(function() {
+            $( "#box" ).animate({
+            width: "400px",
+            height: "300px", 
+              }, 1500 );
+          });
+
+          $( "#btn2" ).click(function() {
+            $( "#box" ).animate({
+            width: "100px",
+            height: "100px",    
+              }, 1500 );
+          });  
+    </script>
+    <br><br>
+
+    <button onclick="scrollToTop()">
+      Click to scroll to top
+    </button>
+
+
+    <script>  
+          $('#accept').click(function() {
+          if ($('#submitbtn').is(':disabled')) { $('#submitbtn').removeAttr('disabled'); } 
+          else { $('#submitbtn').attr('disabled', 'disabled');  }
+          });
+    </script>
+    
+    <script src=
+        "https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+      <script>
+          function scrollToTop() {
+            $(window).scrollTop(0);
+          }
+      </script>
+    </body>
+    <script>
+        $('body').css('background-image',
+        'url("https://assets.petco.com/petco/image/upload/c_pad,dpr_1.0,f_auto,q_auto,h_636,w_636/c_pad,h_636,w_636/542920-right-1")');
+    </script>
+</html>
